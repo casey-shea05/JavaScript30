@@ -144,6 +144,20 @@
         "car",
         "truck",
       ];
+
+      // 1. iterate through data (reduce method iterates so good starting point?)
+      // 2. make an object property for each new unique string, using the string content as the property name?
+      // 3. count how many times each unique string appears in the array
+      const sumOfInstances = data.reduce((object, string) => {
+        if (object[string] === undefined) {
+          object[string] = 1;
+        } else {
+          object[string] += 1;
+        }
+        return object;
+      }, {});
+
+      console.table(sumOfInstances);
     </script>
   </body>
 </html>
